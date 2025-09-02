@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Personal AI Dashboard (Jarvis Style)</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="icon" href="assets/icons/ai-icon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <div id="background"></div>
+
+  <main class="container">
+    <header class="header">
+      <h1>Personal AI Dashboard</h1>
+      <button id="mic-btn" aria-label="Activate Voice Assistant" title="Activate Voice Assistant">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="mic-icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 1v11m0 0a3 3 0 003-3V5a3 3 0 00-6 0v4a3 3 0 003 3zm0 0v4m0 4v2m-4 0h8"
+          />
+        </svg>
+      </button>
+    </header>
+
+    <section class="response-box glass">
+      <p id="assistant-response" aria-live="polite" aria-atomic="true"></p>
+    </section>
+
+    <section class="dashboard-grid">
+      <!-- Clock & Calendar -->
+      <div class="card glass" id="clock-card" aria-label="Live Clock and Calendar">
+        <h2>Clock & Calendar</h2>
+        <div id="clock" aria-live="polite" aria-atomic="true"></div>
+        <div id="calendar" aria-live="polite" aria-atomic="true"></div>
+      </div>
+
+      <!-- Weather -->
+      <div class="card glass" id="weather-card" aria-label="Weather Information">
+        <h2>Weather</h2>
+        <div id="weather-icon" aria-hidden="true">☀️</div>
+        <div id="weather-info">
+          <p>Location: <span id="weather-location">New York</span></p>
+          <p>Condition: <span id="weather-condition">Sunny</span></p>
+          <p>Temperature: <span id="weather-temp">25°C</span></p>
+        </div>
+      </div>
+
+      <!-- To-Do List -->
+      <div class="card glass" id="todo-card" aria-label="To-Do List">
+        <h2>To-Do List</h2>
+        <form id="todo-form" aria-label="Add new task">
+          <input
+            type="text"
+            id="todo-input"
+            placeholder="Add new task..."
+            aria-required="true"
+            autocomplete="off"
+          />
+          <button type="submit" aria-label="Add task">+</button>
+        </form>
+        <ul id="todo-list" aria-live="polite" aria-atomic="true"></ul>
+      </div>
+
+      <!-- Quick Launcher -->
+      <div class="card glass" id="launcher-card" aria-label="Quick Launcher">
+        <h2>Quick Launcher</h2>
+        <div class="launcher-buttons">
+          <button data-url="https://www.google.com" aria-label="Open Google" title="Google">
+            <img src="assets/icons/google.svg" alt="Google" />
+          </button>
+          <button data-url="https://www.youtube.com" aria-label="Open YouTube" title="YouTube">
+            <img src="assets/icons/youtube.svg" alt="YouTube" />
+          </button>
+          <button data-url="https://github.com" aria-label="Open GitHub" title="GitHub">
+            <img src="assets/icons/github.svg" alt="GitHub" />
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
